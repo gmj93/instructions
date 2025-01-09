@@ -65,7 +65,17 @@ leader :
 resize-p -X Y         Where X in {U, D, L, R} and Y is a value to move
 ```
 
+# Copy/Paste
+
+Enter selection mode:
+
+`leader + [`
+
+Start selecting with `space`. Press `enter` to copy. Optionally press `leader + Ctrl+c` top copy to system clipboard (if enabled by config below). Pasting works in the same window with `leader + ]`. For other windows use ctrl+v, shift+insert, etc.
+
 # Configuration file for better operation
+
+NOTE: Needs `xsel` to be installed for the copy functionality
 
 Edit `~/.tmux.conf` and add
 
@@ -89,8 +99,14 @@ bind -n M-Down select-pane -D
 # Enable mouse mode (tmux 2.1 and above)
 set -g mouse on
 
-# don't rename windows automatically
+# Don't rename windows automatically
 set-option -g allow-rename off
+
+# Set vi status-keys
+set -g mode-keys vi
+
+# Enable saving copied text to system clipboard
+bind C-c run "tmux save-buffer - | xsel -bi"
 ```
 
 # Big tmux cheatsheet
