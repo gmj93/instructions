@@ -187,3 +187,27 @@ sudo fallocate -l 16G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
+
+# Resize LVM
+
+Check current volume group configuration
+
+```
+vgdisplay
+```
+
+Extend volume group to use the full size
+
+Check LV_PATH with `lvdisplay`
+
+```
+lvextend -l +100%FREE <LV_PATH>
+```
+
+Extend the partition
+
+```
+resize2fs </dev/mapper.../ubuntu--lv>
+```
+
+https://packetpushers.net/blog/ubuntu-extend-your-default-lvm-space/
