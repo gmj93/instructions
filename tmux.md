@@ -107,6 +107,9 @@ set -g mode-keys vi
 
 # Enable saving copied text to system clipboard
 bind C-c run "tmux save-buffer - | xsel -bi"
+
+# Increase the number of scrollback lines
+set-option -g history-limit 50000
 ```
 
 # Big tmux cheatsheet
