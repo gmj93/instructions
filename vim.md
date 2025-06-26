@@ -86,5 +86,6 @@ else
 endif " has("autocmd")
 
 set number
-set background=dark 
+set background=dark
+set nobackup
 ```
