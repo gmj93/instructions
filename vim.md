@@ -1,6 +1,39 @@
-# Basic VIM configuration file
+# Horizontal split
 
-For `.vimrc` file:
+ctrl+w s
+
+# Vertical split
+
+ctrl+w v
+
+# Move to right window
+
+ctrl+w l
+
+# Move to left window
+
+ctrl+w h
+
+# Move to window below
+
+ctrl+w j
+
+# Move to window above
+
+ctrl+w k
+
+# Paste code without auto indent
+
+In command mode set:
+:set paste
+
+Type "i" to enter paste mode
+paste code
+
+In command mode set to exit paste mode:
+:set nopaste
+
+# vimrc
 
 ```
 " An example for a vimrc file.
@@ -89,3 +122,6 @@ set number
 set background=dark
 set nobackup
 ```
+
+# Reference
+https://linuxhint.com/how-to-use-vim-split-screen
